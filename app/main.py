@@ -44,8 +44,7 @@ class Ship:
 
 
 class Battleship:
-    def __init__(self,
-                 ships: List[Tuple[Tuple[int, int], Tuple[int, int]]]
+    def __init__(self, ships: List[Tuple[Tuple[int, int], Tuple[int, int]]]
                  ) -> None:
         self.field = {}
         self.ships = []
@@ -68,8 +67,9 @@ class Battleship:
                 if deck.is_alive:
                     grid[deck.row][deck.column] = "□"
                 else:
-                    grid[deck.row][deck.column] = "x"\
-                        if ship.is_drowned else "*"
+                    grid[deck.row][deck.column] = (
+                        "x" if ship.is_drowned else "*"
+                    )
 
         for row in grid:
             print(" ".join(row))
